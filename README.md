@@ -10,8 +10,31 @@ and then
 npm run start
 ```
 
+Then you can go on
+
+```
+localhost:3000
+```
+
+on your favorite browser, you'll see a 3D globe.
+
+Turn on your database, and your DJANGO API, to have data to display (fetched on localhost:8000/mountain_peak)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## To get data
+
+You can run the SQL script on your favorite Database management (pgAdmin for me).
+
+See the file
+
+
+```
+database.sql
+```
+
+To see some mountain peaks
 
 ## Available Scripts
 
