@@ -36,6 +36,8 @@ MFI_mountain_peaks.csv
 
 To get some mountain peaks data.
 
+![image](https://user-images.githubusercontent.com/26353209/163223482-9b568eca-fd5d-425b-a7a4-0f5169c3db6b.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
