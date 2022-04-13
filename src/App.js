@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-underscore-dangle */
+import React, { useEffect } from 'react';
+import { Route, Router } from 'react-router-dom';
 
-function App() {
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { fetchMountainPeaks } from './reducers/Slices/MountainPeaksSlice';
+import Globe from 'react-globe.gl';
+
+const App = ({
+  mountainPeaks,
+  mountainPeaksData
+}) => {
+
+  useEffect(() => {
+      // FIXME What should we do if the token doesn't exist
+      mountainPeaks();
+    }, []);
+
+  const N = 300;
+  const gData = mountainPeaksData.map((mountainPeak) => ({
+    lat: mountainPeak.latitude,
+    lng: mountainPeak.longitude,
+    size: mountainPeak.altitude / 50000,
+    color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
+  }));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Globe 
+   pointsData={gData}
+   pointAltitude="size"
+   pointColor="color"
+   globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+   />
   );
 }
 
-export default App;
+App.propTypes = {
+  mountainPeaks: PropTypes.func,
+  mountainPeaksData: PropTypes.array,
+};
+
+const mapStateToProps = (state) => ({
+mountainPeaksData: state.mountainPeaks.mountainPeaks,
+});
+
+export default connect(mapStateToProps, {
+  mountainPeaks: fetchMountainPeaks
+})(App);
+
