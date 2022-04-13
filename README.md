@@ -31,10 +31,10 @@ See the file
 
 
 ```
-database.sql
+MFI_mountain_peaks.csv
 ```
 
-To see some mountain peaks
+To get some mountain peaks data.
 
 ## Available Scripts
 
