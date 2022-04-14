@@ -1,6 +1,42 @@
-# Getting Started with Create React App
+# To run easily the application
+
+Just type
+```
+npm i
+```
+
+and then 
+```
+npm run start
+```
+
+Then you can go on
+
+```
+localhost:3000
+```
+
+on your favorite browser, you'll see a 3D globe.
+
+Turn on your database, and your DJANGO API, to have data to display (fetched on localhost:8000/mountain_peak)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## To get data
+
+You can run the SQL script on your favorite Database management (pgAdmin for me).
+
+See the file
+
+
+```
+MFI_mountain_peaks.csv
+```
+
+To get some mountain peaks data.
+
+![image](https://user-images.githubusercontent.com/26353209/163223482-9b568eca-fd5d-425b-a7a4-0f5169c3db6b.png)
 
 ## Available Scripts
 
